@@ -1,3 +1,4 @@
+---
 meta:
   environment: node
   toolchain:
@@ -6,7 +7,12 @@ meta:
 build:
   artifacts:
     '*': /
-  command: ''
+  command: ""
+  additionalCommands: npm run build
 run:
   persistenceMount: /data
   containerPort: 80
+  scriptName: index.js
+  command: npm run start
+  nodeArguments: run
+  scriptArguments: start
