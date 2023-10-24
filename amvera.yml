@@ -1,0 +1,18 @@
+---
+meta:
+  environment: node
+  toolchain:
+    name: npm
+    version: 18
+build:
+  artifacts:
+    '*': /
+  command: "npm init"
+  additionalCommands: npm run dev
+run:
+  persistenceMount: /data
+  containerPort: 80
+  scriptName: index.js
+  command: npm run start
+  nodeArguments: run
+  scriptArguments: start
